@@ -24,3 +24,6 @@ test('multiple negative number', () => {
 test('ignore number > 1000', () => {
     expect(add(`1,2,1001`)).toBe(3);
 })
+test('multiple separator', () => {
+    expect(add(`//[***]\n1***2***3`)).toBe(6);
+})

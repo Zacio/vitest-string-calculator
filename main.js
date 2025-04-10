@@ -1,7 +1,17 @@
 function separator(numbers){
     let separatorperso = ",";
     if(numbers.startsWith("//")){
-        separatorperso = numbers.charAt(2);
+        separatorperso = "";
+        if( numbers.charAt(2) == "["){
+            let i = 3;
+            while(numbers.charAt(i) != "]"){
+                separatorperso += numbers.charAt(i);
+                i++;
+            }
+
+        }else{
+            separatorperso = numbers.charAt(2);
+        }
     }
     return separatorperso;
 }
@@ -14,8 +24,15 @@ export function add(numbers){
     let separatorperso = separator(numbers);
 
     if(numbers.startsWith("//")){
-        numbers = numbers.substring(3); 
-        console.log(numbers);
+        if(numbers.charAt(2) == "["){
+            let i = 3;
+            while(numbers.charAt(i) != "]"){
+                i++;
+            }
+            numbers = numbers.substring(i + 1);
+        }else{
+            numbers = numbers.substring(2); 
+        }
         }
 
     numbers = numbers.replace(/\n/g, separatorperso);
