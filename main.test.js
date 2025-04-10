@@ -17,3 +17,6 @@ test('adds 1 + 2 to equal 3', () => {
 test('negative number is not alowed', () => {
     expect(add(`//;1;-2`)).toBe("negatives not allowed: -2");
 })
+test('multiple negative number', () => {
+    expect(add(`-1,-2,-3`)).toBe("negatives not allowed: -1,-2,-3");
+})

@@ -22,12 +22,17 @@ export function add(numbers){
     numbers = numbers.split(separatorperso).map(Number);
 
     let sum = 0;
-
+    
+    let negativeNumber = [];
     for (let i = 0; i < numbers.length; i++) {
+        
         if (numbers[i] < 0) {
-            return("negatives not allowed: " + numbers[i]);
+            negativeNumber.push(numbers[i]);
         }
         sum += numbers[i];
+    }
+    if (negativeNumber.length > 0) {
+        return "negatives not allowed: " + negativeNumber.join(",");
     }
     return sum;
 }
