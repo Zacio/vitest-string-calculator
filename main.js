@@ -29,7 +29,9 @@ export function add(numbers){
         if (numbers[i] < 0) {
             negativeNumber.push(numbers[i]);
         }
-        sum += numbers[i];
+        if (numbers[i] < 1000) {
+            sum += numbers[i];
+        }
     }
     if (negativeNumber.length > 0) {
         return "negatives not allowed: " + negativeNumber.join(",");

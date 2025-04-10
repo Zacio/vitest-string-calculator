@@ -20,3 +20,7 @@ test('negative number is not alowed', () => {
 test('multiple negative number', () => {
     expect(add(`-1,-2,-3`)).toBe("negatives not allowed: -1,-2,-3");
 })
+
+test('ignore number > 1000', () => {
+    expect(add(`1,2,1001`)).toBe(3);
+})
