@@ -28,6 +28,10 @@ test('multiple separator charactère', () => {
     expect(add(`//[***]\n1***2***3`)).toBe(6);
 })
 
-test('multiple separator', () => {
+test('multiple separator type', () => {
     expect(add(`//[*][%]\n1*2%3`)).toBe(6);
+})
+
+test('last test', () => {
+    expect(add(`//[**][%%]\n1**2%%3`)).toBe(6);
 })
